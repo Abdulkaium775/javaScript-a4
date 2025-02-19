@@ -1,5 +1,5 @@
-function calculate (price) {
-    if (typeof price !=="number" || price <= 0){
+function calculateVAT(price) {
+    if (typeof price !=="number" || price <= 0 ){
         return "invalid";  
     }
 
@@ -9,11 +9,13 @@ function calculate (price) {
     
 }
 
-console.log (calculate (1500)); 
 
 
 
-function validContact( contact ){
+
+
+
+function validContact(contact){
 if(typeof contact !=="string"){
     return "invalid";
 }
@@ -23,21 +25,24 @@ if(contact.length == 11 && contact.startsWith("01") && !contact.includes(" ")) {
 else{
     return false;
 }
+
 }
 
-const max =validContact ("01608010775")
-console.log(max)
+
+
+
 
 
 
 function willSuccess(marks) {
 
-    let pass = 0;
-    let fail = 0;
-for (let mark of marks) {
     if(!Array.isArray(marks)) {
         return "invalid"
     }
+
+    let pass = 0;
+    let fail = 0;
+for (let mark of marks) {
         if(mark>=50){
             pass++;
         }
@@ -54,9 +59,8 @@ for (let mark of marks) {
         }
     }   
     
-const marks = [55,75,41,33,0,87,91,30];
-const total =willSuccess(marks);
-console.log(total);
+
+
 
 
 
@@ -74,23 +78,16 @@ else{
 
 }
 
-person1 ={
-    name:"Sams",
-    gender:"male",
-    age:25
-}
-person2 ={
-    name:"Sumu",
-    gender:"female",
-    age:21
-}
-console.log(validProposal(person1,person2))
+
 
 
 
 
 
 function calculateSleepTime(times) {
+    if (!Array.isArray(times)) {
+        return "Invalid";
+    }
 
     let totalTimes = 0;
     let timeCount = {
@@ -100,12 +97,10 @@ function calculateSleepTime(times) {
     };
 
     for (let time of times) {
-
-        if (!Array.isArray(times) && typeof times !== "number") {
+        if (typeof time !== "number") {
             return "Invalid";
         }
-    
-        totalTimes = totalTimes+time;
+        totalTimes += time;
     }
 
     timeCount.hour = Math.floor(totalTimes / 3600);
@@ -115,5 +110,5 @@ function calculateSleepTime(times) {
     return timeCount;
 }
 
-const times = [1000, 2000, 725];
-console.log(calculateSleepTime(times));
+
+
