@@ -37,7 +37,7 @@ else{
 function willSuccess(marks) {
 
     if(!Array.isArray(marks)) {
-        return "invalid"
+        return "invalid";
     }
 
     let pass = 0;
